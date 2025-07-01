@@ -1,3 +1,4 @@
+/* Base Reset */
 * {
   margin: 0;
   padding: 0;
@@ -5,49 +6,66 @@
 }
 
 body {
-  background-color: #1e1e2f;
-  color: #eee;
+  background-color: #0f0f0f;  /* Dark background like index.html */
+  color: #ffffff;
   font-family: 'Fira Code', monospace;
   height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
+/* Header */
 .top-bar {
+  background: #121212;
+  padding: 20px 40px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.top-bar h1 {
+  font-size: 1.8rem;
+  color: #39ff14; 
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.buttons button {
+  background: #39ff14;
+  color: #000;
   padding: 10px 20px;
-  background: #111;
-  color: #fff;
-  font-weight: bold;
-}
-
-.top-bar .buttons button {
-  background: #2c2c3e;
+  border-radius: 6px;
   border: none;
-  color: #fff;
-  padding: 5px 10px;
-  margin-left: 8px;
-  border-radius: 5px;
+  font-weight: bold;
   cursor: pointer;
+  margin-left: 10px;
+  transition: background 0.3s ease;
 }
 
+.buttons button:hover {
+  color: white;
+  background-color: #152711;
+}
+
+/* Editor Area */
 .editor-panel {
   display: flex;
   flex: 1;
   height: 40%;
-  border-top: 1px solid #333;
+  border-top: 1px solid #2a2a2a;
 }
 
 .panel {
   flex: 1;
   display: flex;
   flex-direction: column;
-  border-right: 1px solid #333;
+  border-right: 1px solid #2a2a2a;
 }
 
 .panel-header {
-  background-color: #2c2c3e;
+  background-color: #1c1c1c;
   padding: 8px 12px;
   font-weight: bold;
   font-size: 14px;
@@ -59,21 +77,23 @@ body {
 .panel-header.html { color: #f06529; }
 .panel-header.css { color: #2965f1; }
 .panel-header.js { color: #f7df1e; }
-.panel-header.output { color: #7cf77c; }
+.panel-header.output { color: #39ff14; }
 
+/* Code Areas */
 textarea {
   flex: 1;
-  background-color: #1e1e2f;
-  color: #fff;
+  background-color: #1a1a1a;
+  color: #ffffff;
   border: none;
   padding: 10px;
   font-size: 14px;
   resize: none;
   outline: none;
+  line-height: 1.5;
 }
 
+/* Output Panel */
 .output-panel {
-  flex: 1;
   display: flex;
   flex-direction: column;
   height: 60%;
@@ -82,5 +102,22 @@ textarea {
 iframe {
   flex: 1;
   border: none;
-  background: white;
+  background: #ffffff;
+  width: 100%;
 }
+
+
+.brand-title {
+  font-size: 1.8rem;
+  color: #39ff14;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand-title .icon {
+  color: #39ff14;
+  font-size: 1.8rem;
+  text-decoration: none;
+}
+

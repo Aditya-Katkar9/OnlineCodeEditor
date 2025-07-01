@@ -16,11 +16,24 @@ cssCode.addEventListener("input", updateOutput);
 jsCode.addEventListener("input", updateOutput);
 
 function clearCode() {
-    if(confirm("Are you sure you want to clear the code?")) {
-    htmlCode.value = "";
-    cssCode.value = "";
-    jsCode.value = "";
-    updateOutput();
+  const htmlCode = document.getElementById("html-code");
+  const cssCode = document.getElementById("css-code");
+  const jsCode = document.getElementById("js-code");
+
+  const isAllEmpty =
+    htmlCode.value.trim() === "" ||
+    cssCode.value.trim() === "" ||
+    jsCode.value.trim() === "";
+
+  if (!isAllEmpty) {
+    const confirmClear = confirm("Are you sure you want to clear the code?");
+    if (confirmClear) {
+      htmlCode.value = "";
+      cssCode.value = "";
+      jsCode.value = "";
+      updateOutput();
+    }
+  }
 }
-}
+
 updateOutput();
