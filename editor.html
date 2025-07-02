@@ -15,39 +15,36 @@
 <body>
   <div class="top-bar">
     <h1 class="brand-title">
-       <a href="index.html" class="icon"><i class='bx bx-edit'></i></a>CodeEditor</h1>
-<div class="buttons">
-        <button onclick="clearCode()">🧹 Clear</button>
-      <button>💾 Save</button>
-      <button>⚙ Settings</button>
+      <a href="index.html" class="icon"><i class='bx bx-edit'></i></a> CodeEditor
+    </h1>
+    <div class="buttons">
+      <a href="editor.html"><button class="active">HCJ</button></a>
+      <a href="c.html"><button>C</button></a>
+      <a href="cpp.html"><button>C++</button></a>
+      <a href="java.html"><button>Java</button></a>
+      <a href="py.html"><button>Python</button></a>
+      <button onclick="clearCode()">🧹 Clear</button>
+
     </div>
   </div>
 
   <div class="editor-panel">
     <div class="panel">
-      <div class="panel-header html">
-        <i class='bx bxl-html5'></i> HTML
-      </div>
+      <div class="panel-header html"><i class='bx bxl-html5'></i> HTML</div>
       <textarea id="html-code" placeholder="Type HTML here..."></textarea>
     </div>
     <div class="panel">
-      <div class="panel-header css">
-        <i class='bx bxl-css3'></i> CSS
-      </div>
+      <div class="panel-header css"><i class='bx bxl-css3'></i> CSS</div>
       <textarea id="css-code" placeholder="Type CSS here..."></textarea>
     </div>
     <div class="panel">
-      <div class="panel-header js">
-        <i class='bx bxl-javascript'></i> JS
-      </div>
+      <div class="panel-header js"><i class='bx bxl-javascript'></i> JS</div>
       <textarea id="js-code" placeholder="Type JS here..."></textarea>
     </div>
   </div>
 
   <div class="output-panel">
-    <div class="panel-header output">
-      <i class='bx bx-play'></i> Output
-    </div>
+    <div class="panel-header output"><i class='bx bx-play'></i> Output</div>
     <iframe id="output"></iframe>
   </div>
 

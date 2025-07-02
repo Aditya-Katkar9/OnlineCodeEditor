@@ -1,35 +1,51 @@
-/* Base Reset */
+/* Reset and Base Styling */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  background-color: #0f0f0f;  /* Dark background like index.html */
+html, body {
+  height: 100vh;
+  overflow: hidden;
+  background-color: #0f0f0f;
   color: #ffffff;
   font-family: 'Fira Code', monospace;
-  height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-/* Header */
+
 .top-bar {
   background: #121212;
   padding: 20px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #2a2a2a;
+  flex-wrap: nowrap;
+  gap: 20px;
 }
 
-.top-bar h1 {
-  font-size: 1.8rem;
-  color: #39ff14; 
+
+.brand-title {
+  font-size: 1.5rem;
+  color: #39ff14;
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+.brand-title .icon {
+  color: #39ff14;
+  font-size: 1.8rem;
+  text-decoration: none;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 10px;
 }
 
 .buttons button {
@@ -45,11 +61,16 @@ body {
 }
 
 .buttons button:hover {
-  color: white;
   background-color: #152711;
+  color: white;
 }
 
-/* Editor Area */
+.buttons .active {
+  background: #152711;
+  color: #ffffff;
+}
+
+/* Panel Layout */
 .editor-panel {
   display: flex;
   flex: 1;
@@ -79,7 +100,7 @@ body {
 .panel-header.js { color: #f7df1e; }
 .panel-header.output { color: #39ff14; }
 
-/* Code Areas */
+/* Textareas */
 textarea {
   flex: 1;
   background-color: #1a1a1a;
@@ -106,18 +127,19 @@ iframe {
   width: 100%;
 }
 
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .editor-panel {
+    flex-direction: column;
+    height: auto;
+  }
 
-.brand-title {
-  font-size: 1.8rem;
-  color: #39ff14;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  .panel {
+    border-right: none;
+    border-bottom: 1px solid #2a2a2a;
+  }
+
+  .output-panel {
+    height: 300px;
+  }
 }
-
-.brand-title .icon {
-  color: #39ff14;
-  font-size: 1.8rem;
-  text-decoration: none;
-}
-

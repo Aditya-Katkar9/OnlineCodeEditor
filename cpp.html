@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>C Code Editor</title>
+
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="c.css" />
+</head>
+<body>
+  <div class="top-bar">
+    <h1 class="brand-title">
+      <a href="index.html" class="icon"><i class='bx bx-edit'></i></a> CodeEditor
+    </h1>
+    <div class="buttons">
+      <a href="editor.html"><button>HCJ</button></a>
+      <a href="c.html"><button>C</button></a>
+      <a href="cpp.html"><button class="active">C++</button></a>
+      <a href="java.html"><button>Java</button></a>
+      <a href="py.html"><button>Python</button></a>
+      <button onclick="clearCode()">🧹 Clear</button>
+      <button onclick="runCode('cpp')">▶ Run</button>
+    </div>
+  </div>
+
+  <div class="main-container">
+    <!-- Code Editor -->
+    <div class="editor-panel">
+      <div class="panel-header c">
+        <i class='bx bxl-c-plus-plus'></i> C++ Code
+      </div>
+      <textarea id="code-area" placeholder="Write C code here...">
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Hello, World!";
+    return 0;
+}
+      </textarea>
+    </div>
+
+    <!-- Output Panel -->
+    <div class="output-panel">
+      <div class="panel-header output">
+        <i class='bx bx-terminal'></i> Output
+      </div>
+      <pre id="output"></pre>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
