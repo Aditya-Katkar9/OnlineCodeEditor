@@ -2,7 +2,7 @@
 const htmlCode = document.getElementById("html-code");
 const cssCode = document.getElementById("css-code");
 const jsCode = document.getElementById("js-code");
-const hcjOutput = document.getElementById("hcj-output");
+const hcjOutput = document.getElementById("output"); // ✅ fixed id
 
 function updateOutput() {
   const html = htmlCode?.value || "";
@@ -14,9 +14,34 @@ function updateOutput() {
 htmlCode?.addEventListener("input", updateOutput);
 cssCode?.addEventListener("input", updateOutput);
 jsCode?.addEventListener("input", updateOutput);
+updateOutput();
 
-// Clear Code
+//Clear Function for HTML, CSS, and JS
 function clearCode() {
+  const htmlCode = document.getElementById("html-code");
+  const cssCode = document.getElementById("css-code");
+  const jsCode = document.getElementById("js-code");
+  const output = document.getElementById("output");
+
+  if (
+    htmlCode.value.trim() === "" &&
+    cssCode.value.trim() === "" &&
+    jsCode.value.trim() === ""
+  ) {
+    return; 
+  }
+
+  const confirmClear = confirm("Are you sure you want to clear all code?");
+  if (confirmClear) {
+    htmlCode.value = "";
+    cssCode.value = "";
+    jsCode.value = "";
+    output.srcdoc = ""; 
+  }
+}
+
+// Clear Code For Language
+function clearCodeForL() {
   const area = document.getElementById("code-area");
   if (area?.value.trim() !== "") {
     const confirmClear = confirm("Are you sure you want to clear the code?");
