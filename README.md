@@ -17,7 +17,4 @@ A sleek and minimal web-based code editor that supports:
 - 🎨 Dark-themed modern UI
 - 📄 Organized into individual pages per language
 
----
-
-## 📁 Project Structure
 
